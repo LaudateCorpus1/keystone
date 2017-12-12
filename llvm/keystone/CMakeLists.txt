@@ -42,6 +42,18 @@ add_library(keystone
   ks.cpp
 )
 
+target_include_directories(keystone PUBLIC
+  "../../include"
+  "../lib/Target/AArch64"
+  "../lib/Target/ARM"
+  "../lib/Target/Hexagon"
+  "../lib/Target/Mips"
+  "../lib/Target/PowerPC"
+  "../lib/Target/Sparc"
+  "../lib/Target/SystemZ"
+  "../lib/Target/X86"
+)
+
 install(TARGETS keystone DESTINATION lib${LLVM_LIBDIR_SUFFIX})
 
 set_target_properties(
